@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --surface: #111111;
+  --surface-raised: #1a1a1a;
+  --border: #2a2a2a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card glow utilities */
+.glow-violet {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
+}
+.glow-orange {
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.25);
+}
+.glow-cyan {
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.25);
+}
+.glow-emerald {
+  box-shadow: 0 0 30px rgba(52, 211, 153, 0.25);
+}
+.glow-pink {
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.25);
+}
+
+/* Hero entrance animation */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  opacity: 0;
+  animation: fade-up 0.6s ease-out 0.15s forwards;
+}
+
+.animate-fade-up-delay-2 {
+  opacity: 0;
+  animation: fade-up 0.6s ease-out 0.3s forwards;
+}
+
+.animate-fade-up-delay-3 {
+  opacity: 0;
+  animation: fade-up 0.6s ease-out 0.45s forwards;
 }

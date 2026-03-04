@@ -1,0 +1,139 @@
+[
+  {
+    "slug": "csm",
+    "title": "CSM - Construction Site Management Software",
+    "shortDescription": "A cross-platform construction site management system built with a desktop app for supervisors and a mobile app for workers, designed to run offline-first in low-connectivity environments.",
+    "fullDescription": "CSM was my HTL diploma project, built with a team of four. Construction sites still run on physical Post-its — we decided to fix that. We built a centralized, real-time lean management system consisting of a desktop application for site supervisors and a mobile application for on-site workers. The core challenge was reliability: construction sites often have limited or no internet connectivity, so the system had to function offline-first and sync when connectivity was restored. The project was managed end-to-end using an agile Scrum workflow with a Jira board for sprint planning, task tracking and backlog organization — mirroring how real software teams operate.",
+    "tags": [
+      "TypeScript",
+      "React",
+      "TailwindCSS",
+      "Electron",
+      "NestJS"
+    ],
+    "accentColor": "violet",
+    "features": [
+      "Project-based construction site management",
+      "Timeline-based visualization of work steps and pulls (lean workflow)",
+      "Management of work steps, obstacles, and changes",
+      "Real-time updates via WebSockets",
+      "Role-based access and permission system",
+      "QR-code-based project access for mobile users",
+      "Offline-capable mobile application with automatic sync",
+      "Separate desktop and mobile workflows optimized for different user roles"
+    ],
+    "image": "/projects/csm.png",
+    "featured": true,
+    "year": 2024,
+    "gradientFrom": "from-violet-600",
+    "gradientTo": "to-purple-800"
+  },
+  {
+    "slug": "task-scheduler",
+    "title": "Notion Task Scheduler",
+    "shortDescription": " A Python automation that reads tasks from Notion and schedules them automatically into Google Calendar — respecting priorities, deadlines and existing events.",
+    "fullDescription": "I came across an ad for Motion — an AI-powered calendar that automatically schedules your tasks. I thought it was a great idea, so I decided to build it myself. The scheduler integrates the Notion API and Google Calendar API to fully automate daily planning. It pulls tasks from two separate Notion databases — one AI-managed, one manual — and schedules them into Google Calendar by finding available time slots while respecting existing events, priorities, deadlines and estimated durations. The core scheduling algorithm sorts tasks by hard deadline, priority and soft deadline, then iterates through existing calendar events to find the earliest conflict-free slot for each task. It handles timezone-aware datetime comparisons, all-day event parsing, and resolves overlaps through iterative slot-finding. Once scheduled, it writes the start and end time back to Notion and updates the task status automatically. The system runs as a background process using APScheduler, polling for Notion changes every few minutes and rescheduling dynamically when tasks are added or modified.",
+    "tags": [
+      "Python",
+      "Notion API",
+      "Google Calendar API",
+      "AP Scheduler"
+    ],
+    "accentColor": "orange",
+    "features": [
+      "Pulls tasks from two Notion databases — AI-managed and manual",
+      "Automatically finds conflict-free time slots in Google Calendar",
+      "Respects task priority, hard deadlines, soft deadlines and estimated duration",
+      "Writes scheduled start and end times back to Notion",
+      "Updates task status automatically (Scheduled, Overdue, Done, Skipped)",
+      "Handles timezone-aware datetime comparisons",
+      "Supports both timed and all-day Google Calendar events",
+      "Runs as a background process, polling for changes every few minutes",
+      "Dynamically reschedules when tasks are added or modified in Notion",
+      "Filters out completed or skipped tasks to avoid unnecessary scheduling"
+    ],
+    "image": "/projects/task-scheduler.png",
+    "featured": true,
+    "year": 2024,
+    "gradientFrom": "from-orange-500",
+    "gradientTo": "to-red-700"
+  },
+  {
+    "slug": "darkknight",
+    "title": "Darkknight",
+    "shortDescription": "A procedurally generated 2D platformer fusing the brutal combat of Dark Souls 3 with the chaotic level design of Spelunky — built entirely in Unity with self-made pixel art.",
+    "fullDescription": "Darkknight started as an experiment: what would happen if you combined the tight, punishing combat of Dark Souls 3 with the procedurally generated chaos of Spelunky?\n\nThe result is a 2D platformer demo with a complete game loop, focused on difficult combat and responsive mechanics. Every level is generated at runtime using a completely custom procedural generation system that builds a tilemap from scratch. Using a combination of prebuilt room layouts and pure randomness.\n\nThe enemy AI features patrolling behaviour, distinct attack patterns per enemy type, and dynamic player tracking for flying enemies like bats that actively chase the player. The visual style is built entirely with self-made pixel art, enhanced by 2D real-time lighting and post-processing effects to give it a unique feel.",
+    "tags": [
+      "Unity",
+      "C#",
+      "Pixel Art (Asprite)",
+      "2D Lighting",
+      "Post Processing",
+      "Procedural Generation"
+    ],
+    "accentColor": "cyan",
+    "features": [
+      "Custom procedural generation system that builds a tilemap at runtime",
+      "Complete game loop with a playable demo",
+      "Enemy AI with patrolling behaviour and distinct attack patterns",
+      "Dynamic player tracking for flying bat enemies",
+      "Self-made pixel art assets",
+      "2D real-time lighting and post-processing for atmospheric visuals",
+      "Combat system inspired by Dark Souls 3"
+    ],
+    "image": null,
+    "featured": false,
+    "year": 2023,
+    "gradientFrom": "from-cyan-500",
+    "gradientTo": "to-blue-700"
+  },
+  {
+    "slug": "cli-editor",
+    "title": "CLI Text Editor",
+    "shortDescription": "A lightweight command line text editor built in C# and .NET, inspired by Nano.",
+    "fullDescription": "I built this because I was fascinated by the VIM editor and wanted to understand how terminal-based editors actually work under the hood — so I made my own.\n\nInspired by Nano, it runs entirely in the terminal and handles the core editing experience: navigating files, editing text and managing the cursor — all within the constraints of a command line interface.\n\nBuilding it taught me a lot about how .NET handles console I/O, terminal rendering and low-level input processing.",
+    "tags": [
+      "C#",
+      ".NET",
+      "CLI",
+      "Terminal"
+    ],
+    "accentColor": "emerald",
+    "features": [
+      "Runs entirely in the terminal",
+      "Core text editing and cursor navigation",
+      "Inspired by the Nano editor",
+      "Built from scratch in C# and .NET"
+    ],
+    "image": null,
+    "featured": false,
+    "year": 2023,
+    "gradientFrom": "from-emerald-500",
+    "gradientTo": "to-teal-700"
+  },
+  {
+    "slug": "type-safe-router",
+    "title": "Type-Safe Router",
+    "shortDescription": "A zero-dependency, fully type-safe URL router for TypeScript where route params are inferred from the route string literal.",
+    "fullDescription": "An experiment in TypeScript's template literal types that produces a router where the parameter types of a route like '/users/:id/posts/:postId' are automatically inferred as { id: string; postId: string } with full IDE autocomplete and compile-time safety.\n\nThe implementation uses conditional types and infer keywords to parse the route string at the type level. The runtime is a thin wrapper around URLPattern. The library is about 200 lines of code but the type machinery is fascinating — it demonstrates how far TypeScript's type system can be pushed without any code generation.\n\nWrote a detailed blog post about the type-level parsing algorithm that got featured in the TypeScript Weekly newsletter.",
+    "tags": [
+      "TypeScript",
+      "Type System",
+      "Library",
+      "URLPattern"
+    ],
+    "accentColor": "pink",
+    "features": [
+      "Route params inferred from string literals — full IDE autocomplete",
+      "Compile-time safety: accessing a non-existent param is a type error",
+      "Zero runtime dependencies — thin wrapper around URLPattern",
+      "200 lines of code; all complexity is in the type layer, not the runtime",
+      "Featured in TypeScript Weekly newsletter"
+    ],
+    "image": null,
+    "featured": false,
+    "year": 2024,
+    "gradientFrom": "from-pink-500",
+    "gradientTo": "to-rose-700"
+  }
+]
