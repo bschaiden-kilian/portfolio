@@ -4,8 +4,11 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   output: "export",
   basePath: "/portfolio",
+  env: {
+    NEXT_PUBLIC_BASE_PATH: "/portfolio",
+  },
   images: {
-    unoptimized: true,
+    loaderFile: "./src/lib/image-loader.ts",
   },
 };
 
