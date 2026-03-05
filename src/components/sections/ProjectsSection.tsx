@@ -1,7 +1,3 @@
-// ProjectsSection — SERVER Component.
-// Receives pre-fetched project data as props (fetched in the parent page).
-// This pattern keeps data fetching at the page level, not buried in components.
-
 import type { Project } from "@/lib/types";
 import GradientText from "@/components/ui/GradientText";
 import Button from "@/components/ui/Button";

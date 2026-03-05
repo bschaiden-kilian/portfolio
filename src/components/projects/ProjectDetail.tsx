@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Project } from "@/lib/types";
 import GradientText from "@/components/ui/GradientText";
 import Tag from "@/components/ui/Tag";
+import ImageLightbox from "@/components/projects/ImageLightbox";
 
 export default function ProjectDetail({ project }: { project: Project }) {
   return (
@@ -15,10 +15,12 @@ export default function ProjectDetail({ project }: { project: Project }) {
         ← Back to projects
       </Link>
 
-      {/* Color banner */}
-      <div
-        className={`h-48 w-full rounded-xl bg-linear-to-br ${project.gradientFrom} ${project.gradientTo} mb-10 opacity-80`}
-      />
+      {/* Color banner — only shown when there are no images */}
+      {project.images.length === 0 && (
+        <div
+          className={`h-48 w-full rounded-xl bg-linear-to-br ${project.gradientFrom} ${project.gradientTo} mb-10 opacity-80`}
+        />
+      )}
 
       {/* Header */}
       <header className="mb-8 space-y-4">
@@ -53,18 +55,8 @@ export default function ProjectDetail({ project }: { project: Project }) {
         ))}
       </div>
 
-      {/* Image */}
-      {project.image && (
-        <div className="mb-12 overflow-hidden rounded-xl border border-border">
-          <Image
-            src={project.image}
-            alt={`${project.title} screenshot`}
-            width={1200}
-            height={675}
-            className="w-full object-cover"
-          />
-        </div>
-      )}
+      {/* Image gallery with lightbox */}
+      <ImageLightbox images={project.images} title={project.title} />
 
       {/* Features */}
       {project.features.length > 0 && (

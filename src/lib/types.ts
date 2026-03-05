@@ -6,7 +6,7 @@ export interface Project {
   tags: string[];
   accentColor: "violet" | "orange" | "cyan" | "emerald" | "pink";
   features: string[];
-  image: string | null;
+  images: string[];
   featured: boolean;
   year: number;
   gradientFrom: string;

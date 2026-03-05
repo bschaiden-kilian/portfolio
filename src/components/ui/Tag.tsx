@@ -1,6 +1,3 @@
-// Tag — a small colored chip used to display technology/skill labels.
-// Server Component: pure markup, no interactivity.
-
 import type { Project } from "@/lib/types";
 
 const colorMap: Record<Project["accentColor"], string> = {

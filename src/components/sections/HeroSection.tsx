@@ -27,8 +27,8 @@ export default function HeroSection() {
         <Button href="/projects" variant="primary">
           View my work
         </Button>
-        <Button href="/#contact" variant="ghost">
-          Get in touch
+        <Button href="/#about" variant="ghost">
+          About me
         </Button>
       </div>
     </section>

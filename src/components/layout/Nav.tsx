@@ -43,10 +43,10 @@ export default function Nav() {
             );
           })}
           <Link
-            href="/#contact"
+            href="/#about"
             className="ml-2 rounded-md bg-violet-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-violet-500"
           >
-            Contact
+            About
           </Link>
         </nav>
 
@@ -82,11 +82,11 @@ export default function Nav() {
             </Link>
           ))}
           <Link
-            href="/#contact"
+            href="/#about"
             onClick={() => setMenuOpen(false)}
             className="mt-2 block rounded-md bg-violet-600 px-4 py-2 text-center text-sm font-medium text-white hover:bg-violet-500"
           >
-            Contact
+            About
           </Link>
         </div>
       )}

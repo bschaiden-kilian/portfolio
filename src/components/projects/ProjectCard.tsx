@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Project } from "@/lib/types";
 import Tag from "@/components/ui/Tag";
 
@@ -19,17 +20,39 @@ const borderHoverClass: Record<Project["accentColor"], string> = {
 };
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const firstImage = project.images[0];
+
   return (
     <div
       className={`group flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 ${glowClass[project.accentColor]} ${borderHoverClass[project.accentColor]}`}
     >
-      {/* Gradient color banner */}
+      {/* Banner: project image or gradient fallback */}
       <Link
         href={`/projects/${project.slug}`}
-        className={`block h-36 w-full bg-linear-to-br ${project.gradientFrom} ${project.gradientTo} opacity-80 transition-opacity duration-300 group-hover:opacity-100`}
+        className="relative block h-36 w-full overflow-hidden"
         tabIndex={-1}
         aria-hidden
-      />
+      >
+        {firstImage ? (
+          <Image
+            src={firstImage}
+            alt={`${project.title} screenshot`}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        ) : (
+          <div
+            className={`h-full w-full bg-linear-to-br ${project.gradientFrom} ${project.gradientTo} opacity-80 transition-opacity duration-300 group-hover:opacity-100`}
+          />
+        )}
+        {/* Image count badge */}
+        {project.images.length > 1 && (
+          <span className="absolute bottom-2 right-2 rounded-md bg-black/60 px-1.5 py-0.5 font-mono text-xs text-zinc-300 backdrop-blur-sm">
+            1 / {project.images.length}
+          </span>
+        )}
+      </Link>
 
       <div className="flex flex-1 flex-col gap-3 p-5">
         {/* Title + year */}

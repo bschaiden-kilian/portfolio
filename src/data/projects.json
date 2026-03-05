@@ -22,7 +22,7 @@
       "Offline-capable mobile application with automatic sync",
       "Separate desktop and mobile workflows optimized for different user roles"
     ],
-    "image": "/projects/csm.png",
+    "images": ["/projects/csm.png"],
     "featured": true,
     "year": 2024,
     "gradientFrom": "from-violet-600",
@@ -52,8 +52,8 @@
       "Dynamically reschedules when tasks are added or modified in Notion",
       "Filters out completed or skipped tasks to avoid unnecessary scheduling"
     ],
-    "image": "/projects/task-scheduler.png",
-    "featured": true,
+    "images": ["/projects/task-scheduler.png"],
+    "featured": false,
     "year": 2024,
     "gradientFrom": "from-orange-500",
     "gradientTo": "to-red-700"
@@ -81,8 +81,13 @@
       "2D real-time lighting and post-processing for atmospheric visuals",
       "Combat system inspired by Dark Souls 3"
     ],
-    "image": null,
-    "featured": false,
+    "images": [
+      "/projects/darkknight/1.png",
+      "/projects/darkknight/2.png",
+      "/projects/darkknight/3.png",
+      "/projects/darkknight/4.png"
+  ],
+    "featured": true,
     "year": 2023,
     "gradientFrom": "from-cyan-500",
     "gradientTo": "to-blue-700"
@@ -105,34 +110,70 @@
       "Inspired by the Nano editor",
       "Built from scratch in C# and .NET"
     ],
-    "image": null,
+    "images": [],
     "featured": false,
     "year": 2023,
     "gradientFrom": "from-emerald-500",
     "gradientTo": "to-teal-700"
   },
   {
-    "slug": "type-safe-router",
-    "title": "Type-Safe Router",
-    "shortDescription": "A zero-dependency, fully type-safe URL router for TypeScript where route params are inferred from the route string literal.",
-    "fullDescription": "An experiment in TypeScript's template literal types that produces a router where the parameter types of a route like '/users/:id/posts/:postId' are automatically inferred as { id: string; postId: string } with full IDE autocomplete and compile-time safety.\n\nThe implementation uses conditional types and infer keywords to parse the route string at the type level. The runtime is a thin wrapper around URLPattern. The library is about 200 lines of code but the type machinery is fascinating — it demonstrates how far TypeScript's type system can be pushed without any code generation.\n\nWrote a detailed blog post about the type-level parsing algorithm that got featured in the TypeScript Weekly newsletter.",
+    "slug": "portfolio",
+    "title": "This Portfolio",
+    "shortDescription": "A fast, dark-themed developer portfolio built with Next.js 15, React 19 and Tailwind CSS v4 — fully static, type-safe, and designed from scratch.",
+    "fullDescription": "This is the site you're looking at right now.\n\nI built it because I wanted a portfolio that felt like mine — not a template, not a theme, but something designed and engineered top to bottom. The stack is Next.js 15 with React Server Components and the React Compiler, so there's almost no client-side JavaScript: only the nav (scroll state) and the image lightbox ship any JS to the browser.\n\nThe design system lives entirely in a single globals.css using Tailwind v4's @theme block — no tailwind.config.js, no plugin configuration. Custom tokens like --color-surface, gradient utilities, and card glow effects are all defined there and consumed directly as Tailwind classes.\n\nProject data is static JSON with a thin TypeScript data-access layer. At build time, Next.js generates a static page for every project slug via generateStaticParams — the whole site exports as plain HTML and deploys to any CDN with zero server costs.\n\nThe image gallery supports an arbitrary number of screenshots with a layout that adapts to the count: single full-width, side-by-side pairs, or a featured-first grid. Clicking any image opens a keyboard-navigable lightbox without any third-party library.",
     "tags": [
+      "Next.js",
       "TypeScript",
-      "Type System",
-      "Library",
-      "URLPattern"
+      "Tailwind CSS v4",
+      "React Server Components"
     ],
-    "accentColor": "pink",
+    "accentColor": "violet",
     "features": [
-      "Route params inferred from string literals — full IDE autocomplete",
-      "Compile-time safety: accessing a non-existent param is a type error",
-      "Zero runtime dependencies — thin wrapper around URLPattern",
-      "200 lines of code; all complexity is in the type layer, not the runtime",
-      "Featured in TypeScript Weekly newsletter"
+      "Fully static output — every page pre-rendered at build time via generateStaticParams",
+      "React Server Components throughout; only 2 client components in the entire app",
+      "React Compiler enabled — no manual useMemo or useCallback needed",
+      "Tailwind v4 design system defined entirely in CSS with @theme tokens",
+      "Multi-image gallery with adaptive layout (1 / 2 / 3+ image modes)",
+      "Custom lightbox with keyboard navigation (← → Esc) — no third-party dependency",
+      "Dark-first design with per-project accent colors and card glow effects",
+      "SEO metadata generated per project via generateMetadata"
     ],
-    "image": null,
+    "images": [],
     "featured": false,
-    "year": 2024,
+    "year": 2025,
+    "gradientFrom": "from-violet-600",
+    "gradientTo": "to-indigo-800"
+  },
+  {
+  "slug": "life-os",
+  "title": "LifeOS",
+  "shortDescription": "A personal productivity dashboard with AI-powered capture, Google Calendar sync, habit tracking, and drag-and-drop scheduling — all running locally in the browser with no backend.",
+  "fullDescription": "I built LifeOS because every productivity app I tried became another thing to manage — and because I wanted a project to experiment with Next.js.\n\nIt's a personal daily dashboard built with Next.js and TailwindCSS — one screen, one day, no clutter. Habits, time blocks and tasks in a single view\n\nThe AI capture page accepts anything — freeform text, photos of handwritten notes, whiteboard shots — and uses Claude's vision API to extract structured tasks and calendar events automatically. You type or photograph, it figures out the rest.\n\nThe timeline integrates with Google Calendar via their REST API, rendering your day as a visual timeline. Drag and drop two events and the times update in Google Calendar in real time, with an overlap-detection algorithm handling conflicts automatically. Past events collapse as the day moves forward.\n\nEverything lives in localStorage. No account, no server, no data leaving the browser except directly to Anthropic and Google APIs.",
+  "tags": [
+    "Next.js",
+    "TypeScript",
+    "TailwindCSS",
+    "Claude API",
+    "Google Calendar API"
+  ],
+  "features": [
+    "AI capture: paste text or upload a photo and Claude extracts tasks and calendar events",
+    "Google Calendar sync with real-time PATCH updates when events are dragged and reordered",
+    "Overlap-aware scheduling: tasks can be pushed to the next free calendar slot with automatic duration trimming",
+    "Habit streak tracking with a rolling date-strip UI",
+    "Inline task and event editing — title, deadline, start/end times editable in place",
+    "Zero backend: all data in localStorage, static export deployable to GitHub Pages"
+  ],
+    "accentColor": "pink",
+    "images": [
+      "/projects/lifeOS/1.png",
+      "/projects/lifeOS/2.png",
+      "/projects/lifeOS/3.png",
+      "/projects/lifeOS/4.png",
+      "/projects/lifeOS/5.png"
+    ],
+    "featured": true,
+    "year": 2026,
     "gradientFrom": "from-pink-500",
     "gradientTo": "to-rose-700"
   }

@@ -1,8 +1,3 @@
-// Button — a reusable SERVER component with two visual variants.
-// Renders as a <Link> when `href` is provided, otherwise a <button>.
-// Server Component: all styling is static, no click handlers stored in this file.
-// (onClick handlers are passed as props by CLIENT components if needed.)
-
 import Link from "next/link";
 import type { ReactNode } from "react";
 
