@@ -117,34 +117,6 @@
     "gradientTo": "to-teal-700"
   },
   {
-    "slug": "portfolio",
-    "title": "This Portfolio",
-    "shortDescription": "A fast, dark-themed developer portfolio built with Next.js 15, React 19 and Tailwind CSS v4 — fully static, type-safe, and designed from scratch.",
-    "fullDescription": "This is the site you're looking at right now.\n\nI built it because I wanted a portfolio that felt like mine — not a template, not a theme, but something designed and engineered top to bottom. The stack is Next.js 15 with React Server Components and the React Compiler, so there's almost no client-side JavaScript: only the nav (scroll state) and the image lightbox ship any JS to the browser.\n\nThe design system lives entirely in a single globals.css using Tailwind v4's @theme block — no tailwind.config.js, no plugin configuration. Custom tokens like --color-surface, gradient utilities, and card glow effects are all defined there and consumed directly as Tailwind classes.\n\nProject data is static JSON with a thin TypeScript data-access layer. At build time, Next.js generates a static page for every project slug via generateStaticParams — the whole site exports as plain HTML and deploys to any CDN with zero server costs.\n\nThe image gallery supports an arbitrary number of screenshots with a layout that adapts to the count: single full-width, side-by-side pairs, or a featured-first grid. Clicking any image opens a keyboard-navigable lightbox without any third-party library.",
-    "tags": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS v4",
-      "React Server Components"
-    ],
-    "accentColor": "violet",
-    "features": [
-      "Fully static output — every page pre-rendered at build time via generateStaticParams",
-      "React Server Components throughout; only 2 client components in the entire app",
-      "React Compiler enabled — no manual useMemo or useCallback needed",
-      "Tailwind v4 design system defined entirely in CSS with @theme tokens",
-      "Multi-image gallery with adaptive layout (1 / 2 / 3+ image modes)",
-      "Custom lightbox with keyboard navigation (← → Esc) — no third-party dependency",
-      "Dark-first design with per-project accent colors and card glow effects",
-      "SEO metadata generated per project via generateMetadata"
-    ],
-    "images": [],
-    "featured": false,
-    "year": 2025,
-    "gradientFrom": "from-violet-600",
-    "gradientTo": "to-indigo-800"
-  },
-  {
   "slug": "life-os",
   "title": "LifeOS",
   "shortDescription": "A personal productivity dashboard with AI-powered capture, Google Calendar sync, habit tracking, and drag-and-drop scheduling — all running locally in the browser with no backend.",
