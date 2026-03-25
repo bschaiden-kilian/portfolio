@@ -30,16 +30,14 @@ export default function AboutSection() {
             <p>
               I&apos;m Kilian — a developer from Austria. 
               I love creating things because I enjoy solving problems: the puzzle of
-              making something work, and the craft of making it feel
-              right.
+              making something work and feel just right.
             </p>
             <p>
               My interest in computers and software began when I was a kid. My first project was a simple ping pong game I built in Scratch. 
               Since then, I&apos;ve graduated from HTL Pinkafeld focusing on IT and taught myself a range of skills across development, design and marketing by building projects that interest me and solving real problems. 
             </p>
             <p>
-              Outside of building software I&apos;m into boxing, strategy and storytelling games
-              and finding ways to automate the boring parts of life.
+              Outside of building software I&apos;m into golf and boxing.
             </p>
           </div>
         </div>
